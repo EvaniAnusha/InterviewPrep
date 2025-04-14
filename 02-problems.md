@@ -137,3 +137,30 @@ def rotate_image(mat):
     reverse(mat[i])
 ```
 ## Set matrix to zeros
+```python
+mat = [
+[1 2 3]
+[4 0 6]
+[7 0 9]
+]
+
+output = [
+[1 0 3]
+[0 0 0]
+[0 0 0]
+]
+
+row = [0 for i in range(len(mat))]
+col = [0 for i in range(len(mat[0]))]
+
+for i in range(len(mat)):
+  for j in range(len(mat[0])):
+    if(mat[i][j] == 0):
+      row[i] = 1   # Flag row_i
+      col[i] = 1   # Flag col_j
+
+for i in range(len(mat)):
+  for j in range(len(mat[0])):
+    if (row[i] == 0 || col[j] == 0):
+      mat[i][j] = 0
+```
